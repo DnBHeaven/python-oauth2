@@ -774,15 +774,15 @@ class Client2(object):
         # prepare required args
         if code is None:
             raise ValueError("Code must be set.")
-        if redirect_uri is None:
-            raise ValueError("Redirect_uri must be set.")
         args = {
             'type': 'web_server',
             'client_id': self.client_id,
             'client_secret': self.client_secret,
-            'code': code,
-            'redirect_uri': redirect_uri,
+            'code': code
         }
+
+        if redirect_uri:
+            args['redirect_uri'] = redirect_uri
 
         # prepare optional args
         if secret_type is not None:
