@@ -765,7 +765,7 @@ class Client2(object):
         return '%s?%s' % (urlparse.urljoin(self.oauth_base_url, endpoint),
             urllib.urlencode(args))
 
-    def access_token(self, code, redirect_uri, params=None, secret_type=None,
+    def access_token(self, code, redirect_uri=None, params=None, secret_type=None,
         endpoint='access_token'):
         """Get an access token from the supplied code
         https://svn.tools.ietf.org/html/draft-hammer-oauth2-00#section-3.5.2.2
